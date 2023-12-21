@@ -1,0 +1,93 @@
+.page__header {
+	display: flex;
+	height: 88px;
+	justify-content: space-between;
+	padding: 16px;
+	gap: 16px;
+	border-bottom: 1px #d9fff5 solid;
+	align-items: center;
+
+	& button {
+		width: 40px;
+		height: 40px;
+	}
+	
+	.header__group {
+		margin-right: auto;
+		width: 97px;
+		height: 50px;
+	}
+
+	.header {
+
+		&__burger {
+			background-image: url("/src/img/burger.svg");
+		}
+
+		&__repair {
+			background-image: url("/src/img/repair.svg");
+		}
+
+		&__call {
+			background-image: url("/src/img/call.svg");
+		}
+
+		&__chat {
+			background-image: url("/src/img/chat.svg");
+		}
+
+		&__profile {
+			background-image: url("/src/img/profile.svg");
+		}
+
+		&__checkstatus {
+			background-image: url("/src/img/checkstatus.svg");
+		}
+
+		&__divider {
+			background-image: url("/src/img/divider.svg");
+			width: 2px;
+			height: 32px;
+		}
+	}
+}
+
+.round-button {
+	width: 40px;
+	height: 40px;
+
+	&__close {
+		background-image: url("/src/img/close.svg");	
+	}
+	
+	&__search {
+		background-image: url("/src/img/search.svg");
+		margin-left: auto;		
+	}
+}
+
+.item--hidden {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	
+	.item--hidden {
+		display: block;
+	}
+
+	.header {
+		padding: 16px 24px;
+			
+			&__divider {
+				margin: 0 4px;
+			}
+	}
+}
+
+@media (min-width: 1366px) {
+	
+	.header {
+		display: none;
+	}
+}

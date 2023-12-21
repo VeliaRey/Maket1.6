@@ -1,0 +1,122 @@
+
+@mixin gradient-title {
+	
+	display: block;
+	width: auto;
+	padding: 16px;
+	background-image: linear-gradient(
+		to right,
+		$super-light-gray,
+		$white);
+	border-top: 1px $bgc-blue solid;	
+}
+
+@mixin button-go {
+	background-image: url("/src/img/go.svg");
+	background-repeat: no-repeat;
+	background-color: $white;
+	background-position: right 16px bottom 16px;
+}
+
+@mixin text-button {
+	@include font ($fontS16, $fW-500, $text-black);
+	display: block;
+	position: relative;
+	height: 24px;
+	padding-left: 57px;
+	line-height: 24px;
+	text-align: left;
+	background-color: transparent;
+}
+
+@mixin text-button-before {
+	position: absolute;
+	content: "";
+	background-image: url("/src/img/expand.svg");
+	width: 24px;
+	height: 24px;
+	left: 24px;
+}
+
+@mixin swiper-blur {	
+		position: absolute;
+		width: 24px;
+		right: 0;
+		background-image: linear-gradient(
+			to right,
+			rgba(248, 248, 248, 0.0001),
+			rgba(248, 248, 248, 1)
+		);
+		z-index: 1;	
+}
+
+.brands {
+	
+	background-color: $super-light-gray;	
+	position: relative;
+	
+
+	&__title {
+		@include gradient-title();
+		
+		&-text {
+			@include font ($fontS16, $fW-400, $light-gray);
+			line-height: 24px;
+			text-transform: uppercase;
+		}
+	}
+
+	&__link {
+		display: flex;
+		width: 100%;
+		height: 100%;
+	}
+	
+	&__img {
+		align-self: center;
+	}
+
+	&__blur {
+		@include swiper-blur();		
+		height: 81px;
+		top: 92px;		
+	}
+}
+
+.text__button {
+	display: none;
+}
+
+.slider__item-brands {
+	@include button-go();
+}
+
+@media (min-width: 768px) {
+
+	.brands {
+		padding-bottom: 34px;	
+
+		&__title {
+			height: 56px;
+			padding-left: 24px;
+		}
+
+		&__blur {
+			display: none;
+		}
+	}
+
+	.text__button {
+		@include text-button();
+		
+		&::before {
+			@include text-button-before();
+		}
+	}
+}
+
+@media (min-width: 1366px) {	
+	.brands__title {
+		padding-left: 32px;
+	}
+}

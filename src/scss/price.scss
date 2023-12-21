@@ -1,0 +1,129 @@
+.price {
+	
+	position: relative;
+	@include font ($fontS16, $fW-400, $light-gray);
+
+	&__title {
+		@include gradient-title();
+
+		&-text {
+			line-height: 24px;
+			text-transform: uppercase;
+		}
+	}
+
+	&__blur {
+		@include swiper-blur();	
+		height: 200px;
+		top: 72px;
+	}
+}
+
+.slider__item-price {
+	@include font ($fontS14, $fW-400, $text-black);
+	height: 162px;
+	width: 226px !important;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	align-items: flex-start;
+	padding: 16px;
+	padding-bottom: 20px;	
+	line-height: 18px;	
+	text-align: left;
+	justify-content: space-between;
+	position: relative;
+}
+
+	.info {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		align-items: flex-start;
+
+		&-action {
+			position: absolute;
+			bottom: 16px;
+			right: 16px;
+			background-image: url('/src/img/Group10.svg');
+			width: 119px;
+			height: 32px;
+		}
+	}
+	
+.info-service::before,
+.info-price::before,
+.info-time::before {
+	color: $light-gray;
+}
+
+.info-service::before {
+	content: "Ремонтные услуги";
+}
+
+.info-price::before {
+	content: "Цена";
+}
+
+.info-time::before {
+	content: "Срок";
+}
+
+.description {
+	@include font ($fontS14, $fW-400, $text-black);
+	line-height: 20px;
+	text-align: left;
+	padding: 0 16px 40px 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+	&__content {
+		width: 288px;
+	}
+
+	&__offer {
+		font-weight:$fW-700;
+		font-size: $fontS16;
+		line-height: 24px;
+		text-align: left;
+		text-decoration: none;
+		padding-top: 8px;
+		position: relative;
+
+		&::after {
+			content: "";
+			background-image: url("/src/img/more.svg");
+			width: 24px;
+			height: 28px;
+			position: absolute;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+
+		.price__title-text {
+			height: 56px;
+			padding-left: 24px;
+		}
+
+		.price-hidden {
+			display: none;
+		}
+
+		.description {
+			padding: 0 24px 47px 24px;
+		
+			&__content {
+				width: 421px;	
+			}
+		}
+	}
+
+	@media (min-width: 1366px) {	
+
+		.price__title-text {
+			padding-left: 32px;
+		}
+	}

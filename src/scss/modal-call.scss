@@ -1,0 +1,22 @@
+.modal-call {
+	@include modal;
+
+	&__title {
+		@include modal-title();
+
+		&::before {
+			@include modal-title-before;
+		}
+	}
+
+	&__field {
+		@include modal-filed();
+	}	
+}
+
+@media (min-width: 1366px) {
+
+	.modal-call__button > .round-button__close {
+		transform: translateX(-105px);			
+	}
+}

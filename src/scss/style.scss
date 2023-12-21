@@ -1,17 +1,15 @@
-$bgColor: #24292e;
-$text: #fff;
+@import "./normalize.scss";
 
-@font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
+@import "./fontstyle.scss";
 
-body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
-}
+@import "./burger.scss";
+@import "./modal-chat.scss";
+@import "./modal-call.scss";
+@import "./page-header.scss";
+@import "./main-page.scss";
+@import "./swiper.scss";
+@import "./brands.scss";
+@import "./technique.scss";
+@import "./price.scss";
+@import "./price-table.scss";
+@import "./page-footer.scss";

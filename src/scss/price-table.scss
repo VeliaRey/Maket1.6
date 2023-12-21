@@ -1,0 +1,78 @@
+
+.price__table {
+	padding: 0 24px;	
+}
+
+.table {
+	@include font ($fontS14, $fW-400, rgba(27, 28, 33, 1));
+	display: none;
+	width: 100%;
+	border: none;	
+	margin-bottom: 24px;	
+	margin-top: 63px;	
+	line-height: 18px;
+	text-align: left;
+	border-collapse: collapse;
+	background-color: $white;
+	border-radius: 6px;
+
+	&__images {
+		background-image: url("/src/img/Group10.svg");
+		width: 119px;
+		height: 32px;
+		background-repeat: no-repeat;
+		display: inline-block;
+	}
+
+	& tbody td {
+		padding: 16px;
+		line-height: 20px;	
+		border-bottom: 1px solid rgba(234, 234, 234, 1);	
+	}
+
+	tr:last-of-type td {
+		border: none;
+	}
+
+	td {
+		height: 64px;	
+
+		&:nth-child(4) {
+			text-align: end;
+		}
+	}
+
+	&-title {
+		position: relative;
+
+		&::after {
+			color:rgba(126, 126, 130, 1);
+			position: absolute;
+			top: -39px;
+			left: 16px;
+		}
+	}
+
+	.title__service::after {	
+		content: "Ремонтные услуги";	
+	}
+
+	.title__price::after {	
+		content: "Цена";	
+	}
+
+	.title__time::after {	
+		content: "Срок";	
+	}	
+}
+
+@media (min-width: 768px) {
+
+	.price__table {
+		display: block;
+	
+	.table {
+		display: table;
+	}
+}
+}

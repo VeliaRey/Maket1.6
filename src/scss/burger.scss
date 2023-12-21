@@ -1,0 +1,123 @@
+.burger {
+	@include font ($fontS16, $fW-500, $text-black);
+	display: none;
+	width: 320px;
+	box-shadow: 
+	16px 0px 52px 0px rgba(14, 24, 80, 0.2),
+  -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+	min-height: 100vh;
+	position: absolute;
+	min-height: 370vh;
+	z-index: 10;
+	background-color: rgba(255, 255, 255, 1);
+
+	&-header__buttons {
+		display: flex;   
+		justify-content: flex-start;
+		padding: 18px 24px 24px 24px;
+		gap: 16px;
+		align-items: center;
+	}
+		.round-button__chatcopy {
+			background-image: url("/src/img/chatCopy.svg");
+		}
+		
+		.round-button__chat {
+			background-image: url("/src/img/chat.svg");	
+		}
+		
+		.round-button__profile {
+			background-image: url("/src/img/profile.svg");	
+		}
+	
+
+	&-menu {
+		list-style: none;
+		padding-bottom: 100px;
+	
+		&__item {			
+			line-height: 24px;
+			text-align: left;
+		}
+
+		&__link {
+			display: block;	
+			padding: 16px 24px;	
+		 
+			&:hover {
+				position: relative;
+				color: $light-gray;
+				transition-property: color;
+				transition-duration: 1s;
+			
+
+				&::after {
+					content: "";
+					position: absolute;
+					background-image: url("/src/img/highlight.svg");
+					width: 4px;
+					height: 32px;
+					left: 0px;
+					top: 16px;
+				}
+			}
+		}
+	}
+
+	&-footer {
+		padding: 0 24px 32px 24px;
+
+		&__buttons {
+			display: flex;
+			gap: 16px;
+		}
+
+		&__mail {
+			line-height: 24px;
+			text-align: left;
+			margin-top: 16px;
+			margin-bottom: 12px;
+		}
+
+		&__phone {
+			font-weight: $fW-700;	
+			font-size: $fontS24;
+			line-height: 32px;
+			letter-spacing: -0.6000000238418579px;
+			text-align: left;
+			margin-bottom: 40px;
+		}
+
+		&__langs-block{
+			display: flex;
+			gap: 7px;
+
+			&__link--current {
+				color: $light-gray;
+			}
+		}
+	}
+}
+
+@media (min-width: 1366px) {
+	
+	.burger {
+		flex-shrink: 0;
+		position: relative !important;
+		box-shadow: none;	
+		display: block;		
+
+		&-menu {
+			padding-bottom: 241px;
+			padding-top: 11px;
+		}	
+
+		&-header__buttons {
+			padding: 30px 31px 0 22px;
+	
+			& > .round-button__close {
+				display: none;
+			}
+		}
+	}	
+}

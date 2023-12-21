@@ -1,0 +1,114 @@
+@mixin modal {
+	@include font ($fontS14, $fW-400, $light-gray);
+	width: 320px;
+	padding: 24px 16px 75px 16px;
+	line-height: 16px;
+	letter-spacing: 0px;
+	text-align: left;
+	background-color: rgba(255, 255, 255, 1);
+	z-index: 15;
+	box-shadow: 16px 0px 52px 0px rgba(14, 24, 80, 0.2), 
+	-2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+	display: none;
+	flex-shrink: 0;
+	position: absolute;	
+	right: 0;
+	min-height: 370vh;
+}
+
+@mixin modal-title {
+	font-size: $fontS24;
+	line-height: 32px;
+	letter-spacing: -0.6000000238418579px;
+	text-align: left;
+	position: relative;
+	padding-top: 40px;
+	padding-bottom: 24px;
+	color: $text-black;
+}
+
+@mixin modal-title-before {
+	content: "";
+	position: absolute;
+	background-image: url("/src/img/highlight.svg");
+	width: 4px;
+	height: 40px;
+	left: -16px;
+	top: 38px;
+}
+
+@mixin modal-filed {
+	@include font ($fontS16, $fW-400, $light-gray);
+	border: 1px solid rgba(234, 234, 234, 1);
+	border-radius: 6px;
+	width: 100%;
+	height: 48px;
+	margin-bottom: 16px;
+	line-height: 24px;
+	text-align: left;
+	padding: 12px 16px;	
+}
+
+.modal-chat {
+	@include modal;
+
+	&__title {
+		@include modal-title();
+
+			&::before {
+				@include modal-title-before();
+			}
+		}
+
+	&__field {
+		@include modal-filed();
+
+		.message {
+			height: 118px;
+		}
+	}	
+
+	&__link {
+		color: $pink;
+	}
+
+	input[type="submit"] {
+		background-image:url("/src/img/Group11.svg");
+		width: 136px;
+		height: 32px;
+		background-repeat: no-repeat;
+		background-color: $transparent;
+		color: $transparent;
+		margin-top: 19px;
+		margin-left: 154px;
+	}
+}
+
+@media (min-width: 1366px) {
+		
+	.modal {
+		width: 440px;
+		padding: 40px 32px;
+	
+		&-button {
+			height: 0;
+		}	
+
+		&-title {
+			padding-top: 0;
+		
+			&::before {
+				left: -32px;
+				top: 0;
+			}
+		}
+	
+	input[type="submit"] {			
+		margin-left: 240px;	
+	}
+	
+		&-chat__button > .round-button__close {
+			transform: translateX(-105px);			
+		}
+	}
+}
